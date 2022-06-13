@@ -221,9 +221,9 @@ const TradeForm = () => {
 
   function ShowAsks (){
     return (
-      <div className="  relative w-auto h-40 overflow-y-auto " >
+      <div className="  relative lg:w-auto h-52 overflow-y-auto sm:w-full  " >
       <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-0 font-bold">Asks</h2>
-      <table className="   lg:w-40 h-40  sm:w-full  ">
+      <table className="   lg:w-40 h-40  sm:w-full ">
             <thead>
             <tr>
               <th  scope="col" className="lg:px-6 lg:py-3 sm:p-1 sm:text-xs lg:text-lg">Price({token2})</th>
@@ -246,7 +246,7 @@ const TradeForm = () => {
 
   function ShowBids (){
     return (
-      <div className="  relative w-auto h-40 overflow-y-auto sm:py-3 lg:py-0" >
+      <div className="  relative lg:w-auto h-52 overflow-y-auto sm:py-3 lg:py-0 sm:w-full " >
       <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-0 font-bold">Bids</h2>
       <table className="   lg:w-40 h-40  sm:w-full  ">
             <thead>
@@ -304,7 +304,7 @@ const TradeForm = () => {
   //console.log(token1,token2);
 
   return (
-    <div className="w-full  justify-center flex flex-col  p-5   ">
+    <div className="w-full  justify-center flex flex-col  p-5 bg-lightbg  ">
       <div className="container rounded-lg shadow-lg w-full relative bg-white  lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Trade</h3>
@@ -336,7 +336,7 @@ const TradeForm = () => {
       </form>
       </div>
       
-      <div className="container     relative sm:mx-auto py-4 ">
+      <div className="container w-full  relative sm:mx-auto py-4 ">
         <div className="px-4 py-2 flex lg:flex-nowrap justify-between sm:flex-wrap  relative">
           {ShowAsks()}
           {ShowBids()}
