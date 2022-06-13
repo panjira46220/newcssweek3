@@ -23,7 +23,7 @@ const Topbar = () => {
   console.log(router.pathname);
 
   return (
-    <nav className="bg-white border-gray-200  sm:px-4 py-4  dark:bg-gray-800 static  ">
+    <nav className="bg-white border-gray-200  sm:px-4 py-4  bg-darkbg relative  ">
     <div className="container flex flex-wrap justify-between items-center mx-auto ">
    
     <div className=" flex ">

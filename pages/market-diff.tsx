@@ -4,8 +4,9 @@ import NavLayout from "../layouts/NavLayout";
 
 const MarketDiff = () => {
   return (
-    <NavLayout>
-       <div className="  relative mb-14 max-h-screen">
+    <NavLayout className="">
+      <div className=' bg-darkbg w-full h-60 absolute'></div>
+       <div className=" bg-lightbg h-screen ">
           <MarketDiffForm />
           
         </div>

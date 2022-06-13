@@ -87,7 +87,7 @@ const MarketDiffForm = () => {
       </form>
       </div>
       
-      <div className="container  absolute   sm:mx-auto py-4  ">
+      <div className="container     sm:mx-auto py-4  ">
       <h3 className=" text-3xl font-bold  text-left relative">List</h3>
       
       <div className="  overflow-x-auto shadow-md rounded border-collapse border border-sky-500 relative " >

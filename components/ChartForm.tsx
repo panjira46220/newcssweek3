@@ -90,8 +90,8 @@ const ChartForm = () => {
     }
     console.log(imgToken(token1))
   return (
-    <div className="w-full max-h-screen justify-center flex flex-col  p-5   ">
-      <div className="container rounded-lg shadow-lg w-full  bg-white  lg:p-12  sm:mx-auto p-6  ">
+    <div className="w-full  justify-center flex flex-col  p-5   ">
+      <div className="container rounded-lg shadow-lg w-full  bg-white relative lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Chart</h3>
         <div className="flex   lg:flex-row sm:flex-col mb-5 justify-around">
@@ -121,10 +121,12 @@ const ChartForm = () => {
         </div>
       </form>
       </div>
-      <div className="py-2"></div>
-      <div className="container     sm:mx-auto py-4 bg-white  flex flex-col  ">
-          <div className="flex-row">
-          <div className="px-4 py-2 flex  justify-between flex-wrap ">
+
+      
+      <div className="py-2 relative "></div>
+      <div className="container  relative   sm:mx-auto py-4 bg-white  flex flex-col  ">
+          <div className="flex-row relative">
+          <div className="px-4 py-2 flex  justify-between flex-wrap relative ">
               <div>
                 <div className="px-4  flex flex-row items-center">
                     {imgToken(token1)}

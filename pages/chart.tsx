@@ -4,11 +4,14 @@ import NavLayout from "../layouts/NavLayout";
 
 const Chart = () => {
   return (
-    <NavLayout>
-      
-          <ChartForm />
-          
-    </NavLayout>
+   
+    <NavLayout className="">
+    <div className=' bg-darkbg w-full h-60 absolute'></div>
+     <div className=" bg-lightbg h-screen ">
+     <ChartForm />
+        
+      </div>
+  </NavLayout>
   );
 };
 

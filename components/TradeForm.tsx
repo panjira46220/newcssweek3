@@ -1,7 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
-
+import  dayjs from "dayjs";
 const TradeForm = () => {
   const [token1, setToken1] = useState('');
   const [token2, setToken2] = useState('');
@@ -304,8 +304,8 @@ const TradeForm = () => {
   //console.log(token1,token2);
 
   return (
-    <div className="w-full max-h-screen justify-center flex flex-col  p-5   ">
-      <div className="container rounded-lg shadow-lg w-full  bg-white  lg:p-12  sm:mx-auto p-6  ">
+    <div className="w-full  justify-center flex flex-col  p-5   ">
+      <div className="container rounded-lg shadow-lg w-full relative bg-white  lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Trade</h3>
         <div className="flex   lg:flex-row sm:flex-col mb-5 justify-around">
@@ -336,8 +336,8 @@ const TradeForm = () => {
       </form>
       </div>
       
-      <div className="container     sm:mx-auto py-4  ">
-        <div className="px-4 py-2 flex flex-row justify-between flex-wrap ">
+      <div className="container     relative sm:mx-auto py-4 ">
+        <div className="px-4 py-2 flex lg:flex-nowrap justify-between sm:flex-wrap  relative">
           {ShowAsks()}
           {ShowBids()}
         </div>

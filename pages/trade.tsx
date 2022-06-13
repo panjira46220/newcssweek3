@@ -5,9 +5,13 @@ import NavLayout from "../layouts/NavLayout";
 
 const trade = () => {
   return (
-    <NavLayout>
+    <NavLayout className="">
+    <div className=' bg-darkbg w-full h-60 absolute'></div>
+     <div className=" bg-lightbg h-screen ">
         <TradeForm/>
-    </NavLayout>
+        
+      </div>
+  </NavLayout>
   );
 };
 
