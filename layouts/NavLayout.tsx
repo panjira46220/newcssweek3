@@ -3,7 +3,7 @@ import Topbar from "../components/Topbar";
 
 const NavLayout: React.FC<React.HTMLProps<HTMLElement>> = (props) => {
   return (
-    <div className="bg-lightbg max-h-screen">
+    <div className=" bg-lightbg ">
         <Topbar />
       
        

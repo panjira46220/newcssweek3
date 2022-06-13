@@ -55,8 +55,8 @@ const MarketDiffForm = () => {
     
   }
   return (
-    <div className="w-full max-h-screen justify-center flex flex-col bg-lightbg p-5">
-      <div className="container rounded-lg shadow-lg w-full  bg-white  lg:p-12  sm:mx-auto p-6  ">
+    <div className="w-full  justify-center flex flex-col  p-5 ">
+      <div className="container rounded-lg shadow-lg w-full relative bg-white  lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Market Diff</h3>
         <div className="flex   lg:flex-row sm:flex-col mb-5 justify-around">
@@ -87,11 +87,11 @@ const MarketDiffForm = () => {
       </form>
       </div>
       
-      <div className="container     sm:mx-auto py-4  ">
-      <h3 className=" text-3xl font-bold  text-left">List</h3>
+      <div className="container  absolute   sm:mx-auto py-4  ">
+      <h3 className=" text-3xl font-bold  text-left relative">List</h3>
       
-      <div className="  relative overflow-x-auto shadow-md rounded border-collapse border border-sky-500 " >
-      <table className=" bg-white  w-full     ">
+      <div className="  overflow-x-auto shadow-md rounded border-collapse border border-sky-500 relative " >
+      <table className=" bg-white  w-full relative    ">
             <thead>
               <tr className="border-b-2 border-gray">
                 <th className="p-4 w-10  ">Token 1</th>

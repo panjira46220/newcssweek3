@@ -23,8 +23,8 @@ const Topbar = () => {
   console.log(router.pathname);
 
   return (
-    <nav className="bg-white border-gray-200  sm:px-4 py-4  dark:bg-gray-800">
-    <div className="container flex flex-wrap justify-between items-center mx-auto">
+    <nav className="bg-white border-gray-200  sm:px-4 py-4  dark:bg-gray-800 static  ">
+    <div className="container flex flex-wrap justify-between items-center mx-auto ">
    
     <div className=" flex ">
     <img src="/2.png" className="mr-3 h-6 sm:h-7 lg:h-12" alt="fin-logo" />
