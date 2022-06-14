@@ -3,8 +3,8 @@ import { useState,useEffect } from "react";
 import axios from "axios";
 import  dayjs from "dayjs";
 const TradeForm = () => {
-  const [token1, setToken1] = useState('');
-  const [token2, setToken2] = useState('');
+  const [token1, setToken1] = useState('BTC');
+  const [token2, setToken2] = useState('USDT');
   
   
   const [asks,setAsks] = useState([]);
@@ -13,7 +13,7 @@ const TradeForm = () => {
   const [amount,setAmount] = useState("");
   const [value, setValue] = useState("USDT");
 
-  const [orderDetail, setOrederdetail] = useState([{}]);
+  const [orderDetail, setOrederdetail] = useState([]);
   const [orderIndex, setOrederindex] = useState(0);
 
   const [display,setDisplay] = useState(0);
@@ -222,8 +222,8 @@ const TradeForm = () => {
   function ShowAsks (){
     return (
       <div className="  relative lg:w-auto h-52 overflow-y-auto sm:w-full  " >
-      <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-0 font-bold">Asks</h2>
-      <table className="   lg:w-40 h-40  sm:w-full ">
+      <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-1 font-bold">Asks</h2>
+      <table className="   lg:w-40 h-40  sm:w-full  ">
             <thead>
             <tr>
               <th  scope="col" className="lg:px-6 lg:py-3 sm:p-1 sm:text-xs lg:text-lg">Price({token2})</th>
@@ -247,7 +247,7 @@ const TradeForm = () => {
   function ShowBids (){
     return (
       <div className="  relative lg:w-auto h-52 overflow-y-auto sm:py-3 lg:py-0 sm:w-full " >
-      <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-0 font-bold">Bids</h2>
+      <h2 className=" text-xl lg:px-6 lg:py-3 sm:p-1 font-bold">Bids</h2>
       <table className="   lg:w-40 h-40  sm:w-full  ">
             <thead>
             <tr>
@@ -272,31 +272,41 @@ const TradeForm = () => {
   const ShowOrder =() =>{
     return(
       
-        <div>
-          <h2>Order history</h2>
-          <table  >
-              <tr>
-                <th>Order ID</th>
-                <th>Date</th>
-                <th>Symbol</th>
-                <th>Type</th>
-                <th>Price</th>
-                <th>Input</th>
-                <th>Output</th>
-              </tr> 
-              {orderDetail.map((contest, idx) => (
-              <tr key={idx}>
-              <td>#{idx+1}</td>
-              <td>{contest.time}</td>
-              <td>{contest.symbol}</td>
-              <td>{contest.type}</td>
-              <td>{contest.price}</td>
-              <td>{contest.input}</td>
-              <td>{contest.output}</td>
-             </tr>
-              ))}  
-            </table>
-        </div>
+      <div className="container  px-4 py-2    sm:mx-auto  ">
+      <h3 className=" text-xl font-bold  text-left relative py-2">Order history</h3>
+      
+      <div className="  overflow-x-auto shadow-md rounded border-collapse  relative " >
+      <table className=" bg-white  w-full relative    ">
+            <thead>
+              <tr className="border-b-2 border-gray">
+                <th className="p-4 w-10  ">Order ID</th>
+                <th className="p-4 w-10 ">Date</th>
+                <th className="p-4 w-10 ">Symbol</th>
+                <th className="p-4 w-10 ">Type</th>
+                <th className="p-4 w-10 ">Price</th>
+                <th className="p-4 w-10 ">Input</th>
+                <th className="p-4 w-10 ">Output</th>
+              </tr>
+            </thead>
+            <tbody>
+            {orderDetail.map((contest, idx) => (
+            <tr key={idx} className="text-center">
+            <td className="p-4 ">#{idx+1}</td>
+            <td className="p-4" >{contest.time}</td>
+            <td className="p-4" >{contest.symbol}</td>
+            <td className="p-4 ">{contest.type}</td>
+            <td className="p-4" >{contest.price}</td>
+            <td className="p-4" >{contest.input}</td>
+            <td className="p-4" >{contest.output}</td>
+          </tr>
+            ))} 
+          </tbody>
+        </table>
+      </div>
+     
+      </div>
+     
+      
       
     )
   }
@@ -341,15 +351,54 @@ const TradeForm = () => {
           {ShowAsks()}
           {ShowBids()}
         </div>
-        <div>
+
+        <div className="px-4 py-2 flex lg:flex-nowrap justify-between sm:flex-wrap  relative">
+          <div className="py-2 w-full ">
+            <p className="text-lg font-bold text-darkbg py-2 px-1 lg:text-xl ">Amount</p>
+            <label className="block bg-white py-1 w-full rounded-lg  flex justify-around">
+              <input
+                type="text"
+                placeholder="Amount"
+                className=" border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 lg:text-lg sm:text-xs py-2 sm:w-full sm:px-2 "
+                name="amountBuy" 
+                onChange={e => setAmount(e.target.value)}
+              />
+              <select value={value} onChange={(e) => {setValue(e.target.value);}} className=" border border-cyan-500 rounded-lg lg:text-base sm:text-xs text-cyan-500 p-1 m-1 ">
+                <option value={token1}>{token1}</option>
+                <option value={token2}>{token2}</option>
+              </select>
+            </label>
+            <div className="p-2"></div> 
+            <button onClick={buyValue} className=" bg-green-600 text-white text-sm  py-4 w-full rounded">Buy</button> 
+          </div>
+
+          <div className="px-10"></div>
+
+          <div className="py-2 w-full  ">
+            <p className="text-lg font-bold text-darkbg py-2 px-1 lg:text-xl ">Amount</p>
+            <label className="block bg-white py-1 w-full rounded-lg flex justify-around">
+              <input
+                type="text"
+                placeholder="Amount"
+                className=" border-slate-200 placeholder-slate-400 contrast-more:border-slate-400 contrast-more:placeholder-slate-500 lg:text-lg sm:text-xs  py-2 sm:w-full sm:px-2 "
+                name="amountSell" 
+                onChange={e => setAmount(e.target.value)}
+              />
+              <select value={value} onChange={(e) => {setValue(e.target.value);}} className=" border border-cyan-500 rounded-lg lg:text-base sm:text-xs text-cyan-500 p-1 m-1">
+                <option value={token1}>{token1}</option>
+                <option value={token2}>{token2}</option>
+              </select>
+            </label>
+            <div className="p-2"></div> 
+            <button onClick={sellValue} className=" bg-red-600 text-white text-sm  py-4 w-full rounded">Sell</button> 
+          </div>
 
         </div>
-        <div>
 
-        </div>
-      
       
       </div>
+      {display > 0 && <ShowOrder/> }
+      
     </div>
   );
 };
