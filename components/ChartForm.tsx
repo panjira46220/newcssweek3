@@ -90,7 +90,7 @@ const ChartForm = () => {
     }
     console.log(imgToken(token1))
   return (
-    <div className="w-full  justify-center flex flex-col  p-5   ">
+    <div className="w-full  justify-center flex flex-col  p-5 cursor-default  ">
       <div className="container rounded-lg shadow-lg w-full  bg-white relative lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Chart</h3>

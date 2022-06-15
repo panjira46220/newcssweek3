@@ -314,7 +314,7 @@ const TradeForm = () => {
   //console.log(token1,token2);
 
   return (
-    <div className="w-full  justify-center flex flex-col  p-5 bg-lightbg  ">
+    <div className="w-full  justify-center flex flex-col  p-5 bg-lightbg  cursor-default">
       <div className="container rounded-lg shadow-lg w-full relative bg-white  lg:p-12  sm:mx-auto p-6   ">
       <form>
         <h3 className="lg:text-4xl sm:text-2xl font-bold text-center mb-7 ">Trade</h3>
