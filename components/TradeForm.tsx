@@ -2,6 +2,7 @@ import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
 import  dayjs from "dayjs";
+import { number, string } from "prop-types";
 const TradeForm = () => {
   const [token1, setToken1] = useState('BTC');
   const [token2, setToken2] = useState('USDT');
@@ -22,7 +23,14 @@ const TradeForm = () => {
   let priceAvg:number = 0;
   let inputUSDT: number = Number(amount);
   let i :number = 0;
-
+interface TypeOrder{
+  time : string,
+  symbol: string,
+  type :string,
+  price : number,
+  input : string,
+  output: number
+}
   useEffect(() => {
     
   },);
@@ -61,7 +69,7 @@ const TradeForm = () => {
     }
   }
   let formatdate = dayjs().format("DD/MM/YYYY h:mm");
-    const detail ={
+    const detail : TypeOrder ={
         time : formatdate,
         symbol: token1+"_"+token2,
         type :"Buy",
