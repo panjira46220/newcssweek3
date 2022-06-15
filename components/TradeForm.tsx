@@ -14,7 +14,7 @@ const TradeForm = () => {
   const [amount,setAmount] = useState("");
   const [value, setValue] = useState("USDT");
 
-  const [orderDetail, setOrederdetail] = useState([]);
+  const [orderDetail, setOrederdetail] = useState<TypeOrder[]>([]);
   const [orderIndex, setOrederindex] = useState(0);
 
   const [display,setDisplay] = useState(0);
