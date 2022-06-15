@@ -69,7 +69,7 @@ interface TypeOrder{
     }
   }
   let formatdate = dayjs().format("DD/MM/YYYY h:mm");
-    const detail : TypeOrder ={
+    const detail  ={
         time : formatdate,
         symbol: token1+"_"+token2,
         type :"Buy",
